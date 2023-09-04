@@ -1,0 +1,54 @@
+﻿@using BankingSystem.Service.DTOs.Transactions;
+@model IEnumerable<TransactionResultDto>
+
+<section class="vh-100 bg-image"
+         style="background-image: url('https://kondowealthadvisors.com/wp-content/uploads/2023/03/Kondo-Banking-Article-Social-Image.jpg');">
+<div class="container mt-lg-5">
+    <div class="row justify-content-center">
+        <div class="col-12 text-center">
+            <h2>Transactions History</h2>
+        </div>
+    </div>
+</div>
+
+<table class="table table-bordered table-hover mt-3">
+    <thead>
+        <tr>
+            @{
+                var user = Model.FirstOrDefault();
+            }
+            <th>@Html.DisplayNameFor(item => user.Id)</th>
+            <th>@Html.DisplayNameFor(item => user.Description)</th>
+            <th>@Html.DisplayNameFor(item => user.Amount)</th>
+            <th>@Html.DisplayNameFor(item => user.SourceAccount)</th>
+            <th>@Html.DisplayNameFor(item => user.TargetAccount)</th>
+            <th>@Html.DisplayNameFor(item => user.CreatedAt)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th>
+                    @Html.DisplayFor(i => item.Id)
+                </th>
+                <th>
+                    @Html.DisplayFor(i => item.Description)
+                </th>
+                <th>
+                    @Html.DisplayFor(i => item.Amount)
+                </th>
+                <th>
+                    @Html.DisplayFor(i => item.SourceAccount.FirstName)
+                </th>
+                <th>
+                    @Html.DisplayFor(i => item.TargetAccount.FirstName)
+                </th>
+                <th>
+                    @Html.DisplayFor(i => item.CreatedAt)
+                </th>
+            </tr>
+        }
+    </tbody>
+</table>
+</section>

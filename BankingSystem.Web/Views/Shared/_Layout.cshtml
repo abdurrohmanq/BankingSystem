@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - BankingSystem.Web</title>
+    <link rel="stylesheet" href="~/lib/mdbootstrap/css/mdb.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/BankingSystem.Web.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-success">
+            <div class="container-fluid">
+                <p class="col-2 fs-2 text-light m-2">Milliy Bank</p>
+                <button class="navbar-toggler"
+                        type="button"
+                        data-mdb-toggle="collapse"
+                        data-mdb-target="#navbarNav"
+                        aria-controls="navbarNav"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active text-light" aria-current="page" asp-controller="Home" asp-action="Index">HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-controller="Home" asp-action="About">ABOUT US</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-controller="Users" asp-action="Create">CREATE USER</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-controller="Users" asp-action="Index">USERS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-controller="Transactions" asp-action="Index">TRANSACTIONS</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <section class="">
+        <!-- Footer -->
+        <footer class="text-center text-white" style="background-color: darkgreen">
+            <!-- Grid container -->
+            <div class="container p-4 pb-0">
+                <!-- Section: CTA -->
+                <section class="">
+                    <p class="d-flex justify-content-center align-items-center">
+                        <span class="me-3">Register for free</span>
+                        <a class="btn btn-outline-light btn-rounded" asp-controller="Users" asp-action="Create">
+                            Sign up!
+                        </a>
+                    </p>
+                </section>
+                <!-- Section: CTA -->
+            </div>
+            <!-- Grid container -->
+            <!-- Copyright -->
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                © 2023 Copyright:
+                <a class="text-white" href="https://mdbootstrap.com/">Milliy Bank.uz</a>
+            </div>
+            <!-- Copyright -->
+        </footer>
+        <!-- Footer -->
+    </section>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/mdbootstrap/js/mdb.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,74 @@
+﻿@using BankingSystem.Service.DTOs.Accounts;
+@model AccountCreationDto
+
+
+<section class="vh-100 bg-image"
+         style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">
+    <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+        <div class="container h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                    <div class="card" style="border-radius: 15px;">
+                        <div class="card-body p-5">
+                            <h2 class="text-uppercase text-center mb-5">Create an account</h2>
+
+                            <form asp-controller="Users" asp-action="Create" method="post">
+
+                                <div class="form-outline mb-4">
+                                    <input asp-for=FirstName type="text" class="form-control form-control-lg" />
+                                    <label asp-for=FirstName class="form-label ">First Name</label>
+                                </div>
+
+                                <div class="form-outline mb-4">
+                                    <input asp-for=LastName type="text" id="form3Example1cg" class="form-control form-control-lg" />
+                                    <label asp-for=LastName class="form-label" for="form3Example1cg">Last Name</label>
+                                </div>
+
+                                <div class="form-outline mb-4">
+                                    <input asp-for=Email type="email" id="form3Example3cg" class="form-control form-control-lg" />
+                                    <label asp-for=Email class="form-label" for="form3Example3cg">Email</label>
+                                </div>
+
+                                <div class="form-outline mb-4">
+                                    <input asp-for=Balance type="number" id="form3Example3cg" class="form-control form-control-lg" />
+                                    <label asp-for=Balance class="form-label" for="form3Example3cg">Balance</label>
+                                </div>
+
+                                <div class="form-outline mb-4">
+                                    <input asp-for=Password type="password" id="form3Example4cg" class="form-control form-control-lg" />
+                                    <label asp-for=Password class="form-label" for="form3Example4cg">Password</label>
+                                </div>
+
+                                <div class="form-outline mb-4">
+                                    <input asp-for=Password type="password" id="form3Example4cdg" class="form-control form-control-lg" />
+                                    <label asp-for=Password class="form-label" for="form3Example4cdg">Repeat your password</label>
+                                </div>
+
+                                <div class="form-check d-flex justify-content-center mb-5">
+                                    <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3cg" />
+                                    <label class="form-check-label" for="form2Example3g">
+                                        I agree all statements in <a href="#!" class="text-body"><u>Terms of service</u></a>
+                                    </label>
+                                </div>
+
+                                <div class="d-flex justify-content-center">
+                                    <button type="submit"
+                                            class="btn btn-success btn-block btn-lg gradient-custom-4 text-body" asp-action="Create">
+                                        Register
+                                    </button>
+                                </div>
+
+                                <p class="text-center text-muted mt-5 mb-0">
+                                    Have already an account? <a href="#!"
+                                                                class="fw-bold text-body"><u>Login here</u></a>
+                                </p>
+
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
